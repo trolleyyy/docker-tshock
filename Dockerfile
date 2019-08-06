@@ -4,7 +4,7 @@ MAINTAINER Mark <willietgwb@gmail.com>
 
 COPY start.sh /start
 # Add and install mono
-ENV TSHOCK_VERSION=4.3.25
+ENV TSHOCK_VERSION=4.3.26
 
 RUN mkdir /world /config /logs /plugins /tshock && \
         cd /tshock && \
