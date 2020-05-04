@@ -13,6 +13,13 @@ RUN chown -R tshocksrv /world && \
     chown -R tshocksrv /tshock && \
     chown -R tshocksrv /start
 
+RUN chmod a+w /world && \
+    chmod a+w /config && \
+    chmod a+w /logs && \
+    chmod a+w /plugins && \
+    chmod a+w /tshock && \
+    chmod a+w /start
+
 USER tshocksrv
 
 # Add and install mono
@@ -30,6 +37,10 @@ VOLUME ["/world", "/config", "/logs", "/plugins"]
 
 # Back to the working directory for the server
 WORKDIR /tshock
+
+RUN touch ServerLog.txt
+RUN ls -lA /
+RUN ls -lA
 
 EXPOSE 7777
 
